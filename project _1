@@ -1,0 +1,21 @@
+import pandas as pd
+
+# Create a DataFrame with your data
+data = {
+    'SN': list(range(1, 21)),
+    'Name': ['John Doe', 'Jane Smith', 'Sam Brown', 'Lisa Ray', 'Michael Johnson', 'Emily Davis', 'David Wilson', 'Sophia Lee', 'Daniel Kim', 'Emma White', 'James Brown', 'Olivia Harris', 'Liam Martinez', 'Isabella Clark', 'Noah Lewis', 'Mia Walker', 'Lucas Young', 'Ava King', 'Ethan Scott', 'Charlotte Green'],
+    'Age': [28, 34, 22, 29, 45, 30, 38, 27, 33, 26, 40, 31, 35, 24, 29, 32, 28, 27, 36, 25],
+    'City': ['New York', 'London', 'Sydney', 'Toronto', 'Chicago', 'Auckland', 'Dublin', 'Singapore', 'Seoul', 'Paris', 'Berlin', 'Tokyo', 'Madrid', 'Rome', 'Amsterdam', 'Zurich', 'Oslo', 'Stockholm', 'Helsinki', 'Copenhagen'],
+    'Country': ['USA', 'UK', 'Australia', 'Canada', 'USA', 'New Zealand', 'Ireland', 'Singapore', 'South Korea', 'France', 'Germany', 'Japan', 'Spain', 'Italy', 'Netherlands', 'Switzerland', 'Norway', 'Sweden', 'Finland', 'Denmark']
+}
+
+df = pd.DataFrame(data)
+
+# Save the DataFrame to a CSV file
+df.to_csv('sample_data_with_sn.csv', index=False)
+
+# Filter the DataFrame where Age is greater than or equal to 30
+x = df[df['Age'] >= 30]
+
+# Print the filtered DataFrame without the index
+print(x.to_string(index=False))
