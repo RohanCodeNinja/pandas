@@ -1,0 +1,16 @@
+
+import pandas as pd
+x = pd.read_excel("C:\\Users\ASUS\OneDrive\Documents\Book1.xlsx")
+
+new_data = {
+    'ROLL_NO':[1006,1007],
+    'Name':['Rani Subedi','hira moti'],
+    'Address':['kathmandu','hile'],
+    'GPA':[3.23,4.0]
+}
+
+hf = pd.DataFrame(new_data)
+df_combined = pd.concat([x,hf])
+df_combined.to_excel('C:\\Users\ASUS\OneDrive\Documents\Book1.xlsx')
+df_updated = pd.read_excel('C:\\Users\ASUS\OneDrive\Documents\Book1.xlsx')
+print(df_updated)
